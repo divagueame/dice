@@ -1,0 +1,96 @@
+:root {
+  font-size: 16px;
+}
+html,
+body,
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(136, 132, 126);
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  width: 100vw;
+  height: 100vh;
+  
+}
+
+.dice-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: blueviolet;
+  perspective: 1500px;
+}
+.dice {
+  background-color: yellow;
+  position: relative;
+  transform-style: preserve-3d;
+  animation-name: rotate;
+  animation-duration: 30s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+ }
+
+.dice-side {
+  /* background-color: tomato; */
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
+  border: 2px solid black;
+  
+}
+
+
+
+.dice-left {
+  background-color: rgba(137, 43, 226, 0.425);
+  transform:  translateX(-5rem) rotateY(90deg);
+  background-image: url('/cat1.jpg');
+  background-size: cover;
+
+
+}
+
+.dice-right {
+  background-color: rgba(137, 43, 226, 0.377);
+  transform:  translateX(5rem) rotateY(90deg)
+}
+
+
+.dice-front {
+  background-color: rgba(93, 240, 57, 0.185);
+  transform:  translateZ(5rem)
+}
+
+.dice-back {
+  background-color: rgba(212, 240, 57, 0.562);
+  transform:  translateZ(-5rem)
+}
+
+
+.dice-top {
+  background-color: rgba(180, 119, 115, 0.377);
+  transform:  translateY(-5rem) rotateX(90deg)
+}
+
+.dice-bottom {
+  background-color: rgba(73, 226, 43, 0.377);
+  transform:  translateY(5rem) rotateX(90deg)
+}
+
+
+@keyframes rotate {
+  0% {
+    transform: rotate3d(0,0,0,0);
+  }
+  100% {
+    transform: rotate3d(0,1,0,360deg);
+  }
+};
