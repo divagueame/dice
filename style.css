@@ -87,8 +87,8 @@ body {
  }
 
  .dice-animation {
-
-  animation-duration: .3s;
+  animation-name: rotate;
+  animation-duration: .35s;
   animation-timing-function: linear;
   animation-iteration-count: 3;
 
@@ -106,9 +106,6 @@ body {
   /* transform: rotate3d(1,0,0,-180deg); */
  }
 
- .dice-animation1{
-  animation-name: rotate1;
- }
 .dice-side {
   background-color: rgba(255, 99, 71, 1.671);
   position: absolute;
@@ -219,7 +216,7 @@ body {
   transition: 4400ms transform cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-@keyframes rotate1 {
+@keyframes rotate {
   0% {
     transform: rotate3d(0,0,0,0);
   }
