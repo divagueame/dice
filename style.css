@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 :root {
   font-size: 16px;
 }
@@ -9,6 +11,7 @@ body,
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Bebas Neue', cursive;
 }
 
 body {
@@ -18,54 +21,83 @@ body {
   align-items: center; */
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
+}
+
+.btn {
+  background-color: burlywood;
+  padding: 2rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
   
 }
 
 .dice-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  background-color: blueviolet;
-  perspective: 1500px;
+  /* overflow: hidden; */
+  position: relative;
+  width: 0%;
+  height: 0%;
+  /* margin: auto; */
+  top: calc(50% - 10rem);
+  left:calc(50% - 5rem) ;
+  
+  background-color: rgb(255, 255, 255);
+  perspective: 10000px;
+  /* position: relative; */
 }
 .dice {
-  background-color: yellow;
+  /* display: none; */
+  /* background-color: yellow; */
   position: relative;
+
+  width: 10rem;
+  height: 10rem;
+  /* top: -100%; */
   transform-style: preserve-3d;
+  transform-origin: center;
   animation-name: rotate;
-  animation-duration: 30s;
+  animation-duration: 3s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
  }
 
 .dice-side {
-  /* background-color: tomato; */
+  background-color: rgb(255, 99, 71);
   position: absolute;
   width: 10rem;
   height: 10rem;
-  border: 2px solid black;
+  top: 0;
+  right: 0;
+  left: 0;
+  /* transform-origin: left top; */
+  /* border: 2px solid rgba(190, 161, 161, 0.301); */
   
 }
 
 
 
 .dice-left {
-  background-color: rgba(137, 43, 226, 0.425);
+  background-color: rgba(107, 92, 121, 0.425);
   transform:  translateX(-5rem) rotateY(90deg);
   background-image: url('/cat1.jpg');
   background-size: cover;
 
-
 }
 
 .dice-right {
-  background-color: rgba(137, 43, 226, 0.377);
+  background-color: rgba(137, 43, 226, 0.877);
   transform:  translateX(5rem) rotateY(90deg)
 }
 
 
 .dice-front {
-  background-color: rgba(93, 240, 57, 0.185);
+  background-color: rgba(93, 240, 57, 0.885);
   transform:  translateZ(5rem)
 }
 
@@ -81,9 +113,9 @@ body {
 }
 
 .dice-bottom {
-  background-color: rgba(73, 226, 43, 0.377);
+  background-color: rgba(73, 226, 43, 0.77);
   transform:  translateY(5rem) rotateX(90deg)
-}
+} 
 
 
 @keyframes rotate {
@@ -91,6 +123,7 @@ body {
     transform: rotate3d(0,0,0,0);
   }
   100% {
-    transform: rotate3d(0,1,0,360deg);
+    transform: rotate3d(.3,1,.3,360deg);
+
   }
 };
